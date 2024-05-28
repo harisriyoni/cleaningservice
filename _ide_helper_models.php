@@ -24,6 +24,7 @@ namespace App\Models{
  * @property string|null $status
  * @property string|null $image
  * @property int|null $users_id
+ * @property-read \App\Models\User|null $gege
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Produk[] $gugu
  * @property-read int|null $gugu_count
  * @method static \Illuminate\Database\Eloquent\Builder|Order newModelQuery()

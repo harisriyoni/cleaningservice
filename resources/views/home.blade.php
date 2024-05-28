@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
                 <div class="card text-black">
-                    <img src="{{ asset('storage/app/' . $a->image_produk) }}" class="card-img-top" alt="iPhone" />
+                    <img src="{{ asset('storage/' . $a->image_produk) }}" class="card-img-top" alt="iPhone" />
                     <div class="card-body">
                         <div class="text-center mt-1">
                             <h4 class="card-title">{{ $a->nama_produk }}</h4>
