@@ -23,7 +23,6 @@ use App\Models\User;
 |
 */
 
-
 //user
 route::get('/home',[homeController::class,'card']);
 route::get('/',[homeController::class,'card']);
