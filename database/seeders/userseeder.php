@@ -28,8 +28,8 @@ class userseeder extends Seeder
             'tanggal_lahir' => '28-04-2003',
             'email' => 'admin@gmail.com',
             'role_id' => '1',
-            'created_at'=>Carbon::now(),
-            'updated_at'=>Carbon::now(),
+            'created_at'=> now(),
+            'updated_at'=> now(),
         ]);
     }
 }

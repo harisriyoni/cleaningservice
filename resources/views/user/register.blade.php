@@ -8,46 +8,72 @@
         <input type="number" class="form-control" name="role_id" value="2" hidden required>
     </div>
     <div class="form-group">
-        <label for="nama_lengkap">Nama Lengkap</label>
-        <input type="text" class="form-control" name="nama_lengkap" required>
+        <label for="nama_lengkap">Nama Lengkap (3-20 karakter)</label>
+        <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" placeholder="Masukkan nama lengkap" required>
+        <small class="form-text text-muted">Minimal 3 karakter, maksimal 255 karakter.</small>
     </div>
     <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" class="form-control" name="username" required>
+        <label for="username">Username (-3 karakter)</label>
+        <input type="text" class="form-control" name="username" id="username" placeholder="Masukkan username" required>
+        <small class="form-text text-muted">Minimal 3 karakter, maksimal 255 karakter.</small>
     </div>
     <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" name="password" required>
+        <label for="password">Password (4-255 karakter)</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Masukkan password" required>
+        <small class="form-text text-muted">Minimal 4 karakter, maksimal 255 karakter.</small>
+        <div class="form-check mt-2">
+            <input type="checkbox" class="form-check-input" id="showPassword">
+            <label class="form-check-label" for="showPassword">Tampilkan Password</label>
+        </div>
     </div>
     <div class="form-group">
-        <label for="no_hp">Nomer HP</label>
-        <input type="text" class="form-control" name="no_hp">
+        <label for="no_hp">Nomer HP (3-255 karakter)</label>
+        <input type="text" class="form-control" name="no_hp" id="no_hp" placeholder="Masukkan nomor HP">
+        <small class="form-text text-muted">Minimal 3 karakter, maksimal 255 karakter.</small>
     </div>
     <div class="form-group">
-        <label for="no_ktp">Nomer KTP</label>
-        <input type="text" class="form-control" name="no_ktp">
+        <label for="no_ktp">Nomer KTP (3-255 karakter)</label>
+        <input type="text" class="form-control" name="no_ktp" id="no_ktp" placeholder="Masukkan nomor KTP">
+        <small class="form-text text-muted">Minimal 3 karakter, maksimal 255 karakter.</small>
     </div>
     <div class="form-group">
-        <label for="alamat">Alamat lengkap</label>
-        <input type="text" class="form-control" name="alamat">
+        <label for="alamat">Alamat Lengkap (3-255 karakter)</label>
+        <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan alamat lengkap">
+        <small class="form-text text-muted">Minimal 3 karakter, maksimal 255 karakter.</small>
     </div>
     <div class="form-group">
         <label for="tanggal_lahir">Tanggal Lahir</label>
-        <input type="date" class="form-control" name="tanggal_lahir">
+        <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir">
     </div>
     <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" class="form-control" name="email">
+        <input type="text" class="form-control" name="email" id="email" placeholder="Masukkan email">
+        <small class="form-text text-muted">Email yang valid diperlukan.</small>
     </div>
     <button type="submit" class="btn btn-primary">Daftar</button>
 </form>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const showPasswordCheckbox = document.getElementById('showPassword');
+    const passwordInput = document.getElementById('password');
+
+    showPasswordCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            passwordInput.type = 'text'; // Show password
+        } else {
+            passwordInput.type = 'password'; // Hide password
+        }
+    });
+});
 </script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-</script>
+
+<style>
+.form-error {
+    color: red;
+    font-size: 0.875em;
+    display: block;
+    margin-top: 0.25em;
+}
+</style>
 @endsection

@@ -35,7 +35,7 @@ class orderController extends Controller
 
         if ($request->file('image')) {
             // Store the file in the public directory and get the full path
-            $path = $request->file('image')->store('public');
+            $path = $request->file('file')->store('uploads');
 
             // Extract the filename from the path
             $filename = basename($path);
