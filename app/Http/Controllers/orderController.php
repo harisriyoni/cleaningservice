@@ -34,8 +34,8 @@ class orderController extends Controller
         ]);
 
         if ($request->file('image')) {
-            // Store the file in the public directory and get the full path
-            $path = $request->file('file')->store('uploads');
+            // Store the file in the 'uploads' directory and get the full path
+            $path = $request->file('image')->store('uploads');
 
             // Extract the filename from the path
             $filename = basename($path);
@@ -49,6 +49,7 @@ class orderController extends Controller
 
         return redirect('/order');
     }
+
 
     public function cetak($id)
     {
